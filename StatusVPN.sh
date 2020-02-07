@@ -26,5 +26,5 @@ then
 else
 #Validar se VPN está trafegando
 	/bin/ping -w2 $VPNSERVER > /dev/null
-	[[ $? != 0 ]] && echo "$DATE - VPN DOWN" >> /var/log/validacaolink.log && /etc/init.d/openvpn restart && exit 0
+	[[ $? != 0 ]] && echo "$DATE - VPN DOWN" >> /var/log/validacaolink.log && /etc/init.d/openvpn restart 
 fi
