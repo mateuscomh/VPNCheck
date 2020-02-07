@@ -6,6 +6,7 @@
 #Versão 1.1 - Promovida implementação para qualquer cliente CentoOS6
 #Homologado em Clientes CENTOS6
 #
+
 ###############################
 
 VPNSERVER=`ifconfig tunSmart | grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" | head -1`
@@ -16,7 +17,6 @@ INTERNETLINK=8.8.8.8
 #Validar disponibilidade da internet
 /bin/ping -w2 $INTERNETLINK > /dev/null
 [[ $? != 0 ]] && echo "$DATE - internet indisponivel" >> /var/log/validacaolink.log && exit 0
-
 #Validar se interface de VPN está UP
 if  ! /sbin/ifconfig $VPNNAME | grep -q "tunSmart";
 then
