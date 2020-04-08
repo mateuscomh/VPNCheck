@@ -6,19 +6,16 @@ while true
 do
 	echo "Digite o Número: "
 	read num
-		if [ $num != 30 ]
-		then
-			echo "Você errou. Tente outra vez"
-			let i++
-			continue
-		fi
-	if [ $num == 30 ] | [ $i == 1 ]
- 	 then
+	if [[ "$num" -ne "30" ]]; then
+		echo "Você errou. Tente outra vez"
+		let i++
+		continue
+	fi
+	if [[ "$num" -eq "30" ]] || [[ "$i" -eq "1" ]]; then
 		 echo "Voce acertou de primeira"
 		 break
 	fi
-	if [ $num == 30 ]
-	then
+	if [[ "$num" -eq "30" ]]; then
 		echo "Voce acertou após $i tentativas"
 		break
 	fi
